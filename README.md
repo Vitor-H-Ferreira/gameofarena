@@ -7,7 +7,7 @@
 
 <br/>
 
-<a href="http://10.111.9.27:3001/" target="_blank">
+<a href="https://gameofarena.vercel.app/" target="_blank">
   <img src="https://img.shields.io/badge/%E2%9A%94%20PLAY%20NOW-ENTER%20THE%20ARENA-ff304f?style=for-the-badge&logoColor=white&labelColor=09090d" height="48"/>
 </a>
 
