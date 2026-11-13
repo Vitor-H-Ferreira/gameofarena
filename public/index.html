@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARENA — Duelo Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="shell">
+    <header class="topbar"><div class="brand"><span class="brand-mark">A</span><div><b>ARENA</b><small>DUEL PROTOCOL // ONLINE</small></div></div><div class="online"><i></i> MULTIPLAYER</div></header>
+    <section id="connect-screen" class="panel connect-panel">
+      <div class="eyebrow">BEM-VINDO AO CAMPO DE BATALHA</div><h1>ENTRE NA <span>ARENA.</span></h1>
+      <p>Escolha um codinome e entre na mesma sala que seu adversário.</p>
+      <div class="connect-fields"><label>SEU NOME<input id="nickname" maxlength="16" placeholder="Ex.: Vitor" value="Lutador 1"></label><label>CÓDIGO DA SALA<input id="room-code" maxlength="12" placeholder="Ex.: ARENA" value="ARENA"></label></div>
+      <button id="join-btn" class="primary-btn">CONECTAR À ARENA <span>↗</span></button><div id="connect-error" class="error"></div>
+      <div class="connection-note"><span>●</span> Para jogar em dois computadores, ambos precisam abrir o endereço do servidor e usar o mesmo código de sala.</div>
+    </section>
+    <section id="lobby-screen" class="panel lobby-panel hidden">
+      <div class="lobby-head"><div><div class="eyebrow">FASE 01 // SELEÇÃO</div><h2>ESCOLHA SEU <span>LUTADOR</span></h2></div><div class="room-tag">SALA <b id="lobby-room">ARENA</b></div></div>
+      <div class="roster" id="roster">
+        <button class="fighter-card selected" data-character="inferno"><div class="fighter-art cinder-art"><div class="fighter-silhouette">C</div><span class="orb"></span></div><b>CINDER</b><small>GUARDIÃO DAS CHAMAS // EQUILÍBRIO</small></button>
+        <button class="fighter-card" data-character="frost"><div class="fighter-art frost-art"><div class="fighter-silhouette">F</div><span class="orb"></span></div><b>FROST</b><small>MESTRE GLACIAL // PRECISÃO</small></button>
+        <button class="fighter-card" data-character="volt"><div class="fighter-art volt-art"><div class="fighter-silhouette">V</div><span class="orb"></span></div><b>VOLT</b><small>CONDUTOR ELÉTRICO // AGILIDADE</small></button>
+        <button class="fighter-card" data-character="shadow"><div class="fighter-art shadow-art"><div class="fighter-silhouette">S</div><span class="orb"></span></div><b>SHADOW</b><small>NINJA UMBRAL // PODER</small></button>
+      </div>
+      <div class="lobby-bottom"><div class="players-status"><div class="player-status"><span class="player-dot you"></span><div><b>JOGADOR 1</b><small id="player-one-status">Aguardando...</small></div></div><div class="player-status"><span class="player-dot"></span><div><b>JOGADOR 2</b><small id="player-two-status">Aguardando adversário...</small></div></div></div><div class="ready-info" id="ready-info">Escolha seu personagem para ficar pronto.</div></div>
+    </section>
+    <section id="game-screen" class="game-wrap hidden">
+      <div class="hud"><div class="fighter-hud left-hud"><div class="hud-name"><b id="name-one">CINDER</b><small>PLAYER 01</small></div><div class="health-track"><div id="health-one" class="health-fill"></div></div></div><div class="round-label"><b>ROUND</b><strong>01</strong></div><div class="fighter-hud right-hud"><div class="hud-name"><b id="name-two">FROST</b><small>PLAYER 02</small></div><div class="health-track"><div id="health-two" class="health-fill"></div></div></div></div>
+      <div class="arena-frame"><canvas id="game" width="1000" height="560"></canvas><div class="arena-label">SECTOR 07 <span>•</span> THE ABYSS</div>
+        <aside class="command-panel command-left" id="commands-one"><b>PLAYER 01</b><span><kbd>A / D</kbd> Mover</span><span><kbd>W</kbd> Pular</span><span><kbd>J</kbd> Soco</span><span><kbd>U</kbd> Chute</span><span><kbd>I</kbd> Uppercut</span><span><kbd>K</kbd> Orbe</span><span><kbd>O</kbd> Poder forte</span><span><kbd>P</kbd> Especial</span><span><kbd>L</kbd> Defender</span></aside>
+        <aside class="command-panel command-right" id="commands-two"><b>PLAYER 02</b><span><kbd>← / →</kbd> Mover</span><span><kbd>↑</kbd> Pular</span><span><kbd>1</kbd> Soco</span><span><kbd>4</kbd> Chute</span><span><kbd>5</kbd> Uppercut</span><span><kbd>2</kbd> Orbe</span><span><kbd>6</kbd> Poder forte</span><span><kbd>7</kbd> Especial</span><span><kbd>3</kbd> Defender</span></aside><div id="countdown" class="countdown hidden">FIGHT!</div><div id="winner-overlay" class="winner-overlay hidden"><div class="eyebrow">COMBATE FINALIZADO</div><h2 id="winner-text">VITÓRIA!</h2><button id="rematch-btn" class="primary-btn">VOLTAR À SELEÇÃO ↗</button></div></div>
+      <div class="controls-row"><span>Use os comandos semitransparentes nas laterais da arena. Segure DEFENDER para bloquear golpes e projéteis.</span></div>
+      <div class="mobile-hint">Dica: cada jogador usa seu próprio teclado. O poder especial tem tempo de recarga.</div>
+    </section>
+    <footer>ARENA FIGHTING SYSTEM <span>•</span> FEITO PARA DUELAR</footer>
+  </main>
+  <script src="/socket.io/socket.io.js"></script><script src="game.js"></script>
+</body></html>

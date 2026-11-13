@@ -1,0 +1,32 @@
+ARENA — JOGO DE LUTA MULTIPLAYER
+
+REQUISITOS
+- Node.js instalado no computador que vai hospedar o jogo.
+- Os dois computadores precisam estar na mesma rede Wi-Fi/LAN para usar o IP local.
+
+INSTALAÇÃO
+1. Extraia a pasta arena_multiplayer.
+2. Abra essa pasta no VS Code.
+3. Abra o terminal dentro da pasta.
+4. Execute: npm install
+5. Execute: npm start
+6. No computador servidor, abra: http://localhost:3001
+7. No segundo computador, abra: http://IP-DO-COMPUTADOR-SERVIDOR:3001
+   Exemplo: http://192.168.0.25:3001
+8. Os dois jogadores digitam o mesmo código de sala (ex.: ARENA), entram e escolhem personagens.
+
+COMO DESCOBRIR O IP NO WINDOWS
+- Abra o Prompt de Comando e digite: ipconfig
+- Procure “Endereço IPv4” do adaptador Wi-Fi/Ethernet.
+- Use esse endereço no segundo computador.
+- Se o Windows perguntar, permita Node.js na rede privada/firewall.
+
+CONTROLES
+JOGADOR 1 (teclado do computador 1)
+A / D = mover | W = pular | J = soco | K = poder | L = defender
+
+JOGADOR 2 (teclado do computador 2, na mesma página/janela compartilhada)
+Setas esquerda/direita = mover | Seta para cima = pular | 1 = soco | 2 = poder | 3 = defender
+
+INTERNET (FORA DA MESMA REDE)
+IP local não funciona pela internet. Para jogar de redes diferentes, hospede o servidor em um serviço Node.js ou configure encaminhamento de porta TCP 3001 no roteador (não recomendado sem entender os riscos).
