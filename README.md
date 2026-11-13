@@ -53,7 +53,7 @@ Escolha seu guerreiro, domine suas habilidades e enfrente seus adversários em u
 
 <img src="https://img.shields.io/badge/ELEMENT-FIRE-ff512f?style=flat-square"/>
 
-**THE INFERNO**
+**THE FOGO**
 
 O poder das chamas.  
 A força da destruição.
